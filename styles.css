@@ -1,0 +1,483 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9; /* Light background for better contrast */
+}
+
+/* Header Styles */
+header {
+    background: #333; /* Fond noir */
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between; /* Aligner les éléments à gauche et à droite */
+    align-items: center; /* Centrer verticalement */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espace entre l'image et le texte */
+}
+
+.header-text {
+    text-align: left;
+    color: white;
+}
+
+.header-text a {
+    color: inherit; /* Hérite de la couleur du parent (.header-text) */
+    text-decoration: none; /* Supprime le soulignement par défaut */
+}
+
+.header-text a:hover {
+    text-decoration: underline; /* Ajoute un soulignement au survol si vous le souhaitez */
+}
+
+.email-link {
+    color: inherit; /* Hérite de la couleur du parent (.header-text) */
+    text-decoration: none; /* Supprime le soulignement par défaut du lien */
+}
+
+.email-link:hover {
+    text-decoration: underline; /* Ajoute un soulignement au survol si vous le souhaitez */
+}
+
+.header-image {
+    max-width: 100px; /* Ajuster la taille de l'image */
+    height: auto;
+    border-radius: 50%; /* Image circulaire */
+    border: 2px solid #FFF; /* Bordure blanche */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 1.1em;
+    color: #ccc; /* Texte en gris clair */
+}
+
+/* Header Text Styles */
+
+.header-text p {
+    margin: 0.5px 0; /* Réduire l'espace entre les lignes */
+    font-size: 1em;
+    color: #ccc; /* Texte en gris clair */
+}
+
+.header-address {
+    margin: 5px 0 0;
+    font-size: 1em;
+    color: #ccc; /* Texte en gris clair */
+}
+
+.linkedin-link {
+    display: flex;
+    align-items: center;
+}
+
+.linkedin-logo {
+    width: 60px; /* Ajuster la taille du logo LinkedIn */
+    height: auto;
+    transition: transform 0.3s ease; /* Animation au survol */
+}
+
+.linkedin-logo:hover {
+    transform: scale(1.1); /* Agrandir légèrement au survol */
+}
+
+/* Navigation Styles */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure navbar stays above other content */
+    background: #444; /* Slightly lighter than header for contrast */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    padding: 10px 0;
+
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 40px;
+    
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+nav ul li a:hover {
+    color: darkcyan;red; /* Green color on hover */
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the content */
+}
+
+section {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2em;
+    border-bottom: 2px solid #333; /* Green underline */
+    padding-bottom: 10px;
+}
+
+article {
+    margin-bottom: 20px;
+}
+
+article h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+article p {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+article ul {
+    padding-left: 20px;
+}
+
+article ul li {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+article p em{
+    color: darkcyan;
+}
+/* Contact Section Styles */
+.contact {
+    background: #f1f1f1; /* Light grey background for contact section */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.contact iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+    border-radius: 8px;
+}
+
+/* Footer Styles */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Shadow at the top */
+}
+
+footer a {
+    color: lightskyblue;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+footer a:hover {
+    color: darkcyan; /* Darker green on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    article h3 {
+        font-size: 1.3em;
+    }
+
+    .contact iframe {
+        height: 400px; /* Adjust height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header p {
+        font-size: 0.9em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    article h3 {
+        font-size: 1.2em;
+    }
+
+    .contact iframe {
+        height: 300px; /* Adjust height for mobile */
+    }
+}
+
+/* Grid Layout for Experience and Formation Sections */
+#experience, #formation {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 20px; /* Space between articles */
+    padding: 20px;
+}
+
+/* Article Styles */
+article {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.article-image {
+    max-width: 50%; /* Ensure the image fits within the article */
+    height: auto;
+    border-radius: 8px; /* Optional: Rounded corners for images */
+    margin-bottom: 15px; /* Space below the image */
+}
+
+article h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+article p {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+article ul {
+    padding-left: 20px;
+    text-align: left; /* Align list items to the left */
+}
+
+article ul li {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #experience, #formation {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    #experience, #formation {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+    }
+}
+
+/* Profil Section Styles */
+#profil {
+    text-align: left; /* Centrer le texte */
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+#profil p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #555;
+    margin: 0;
+}
+
+/* Compétences Section Styles */
+#Competence {
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+#Competence h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2em;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+#Competence ul {
+    list-style: none; /* Supprimer les puces */
+    padding: 0;
+}
+
+#Competence ul li {
+    background: #f1f1f1; /* Fond gris clair */
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px; /* Coins arrondis */
+    font-size: 1em;
+    color: #333;
+}
+
+/* Contact Section Styles */
+#contact {
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+#contact h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2em;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+#contact iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+    border-radius: 8px;
+}
+
+/* Responsive Design for New Sections */
+@media (max-width: 768px) {
+    #profil p {
+        font-size: 1em;
+    }
+
+    #Competence ul li {
+        font-size: 0.9em;
+    }
+
+    #contact iframe {
+        height: 400px; /* Ajuster la hauteur pour les tablettes */
+    }
+}
+
+@media (max-width: 480px) {
+    #profil p {
+        font-size: 0.9em;
+    }
+
+    #Competence ul li {
+        font-size: 0.8em;
+    }
+
+    #contact iframe {
+        height: 300px; /* Ajuster la hauteur pour les mobiles */
+    }
+}
+
+/* Langues Section Styles */
+#langues {
+    display: grid; /* Utiliser Grid pour aligner les articles */
+    grid-template-columns: repeat(4, 1fr); /* 4 colonnes égales */
+    gap: 10px; /* Espace entre les articles */
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    width: 100%; /* Assurer que la section prend toute la largeur disponible */
+}
+
+#langues article {
+    text-align: center; /* Centrer le contenu des articles */
+    min-width: 0; /* Permettre aux articles de rétrécir si nécessaire */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; /* Ajouter un peu de padding pour l'espacement interne */
+}
+
+.langues-image {
+    max-width: 80px; /* Ajuster la taille des images */
+    height: auto;
+    border-radius: 5px; /* Coins arrondis pour les images */
+    margin-bottom: 10px; /* Espace sous l'image */
+}
+
+#langues p {
+    font-size: 1em; /* Taille de la police */
+    color: #333;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #langues {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur les tablettes */
+    }
+}
+
+@media (max-width: 480px) {
+    #langues {
+        grid-template-columns: 1fr; /* 1 colonne sur les mobiles */
+    }
+}
