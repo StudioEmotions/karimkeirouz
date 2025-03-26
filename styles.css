@@ -289,7 +289,7 @@ article {
 }
 
 .article-image {
-    max-width: 50%; /* Ensure the image fits within the article */
+    max-width: 100%; /* Ensure the image fits within the article */
     height: auto;
     border-radius: 8px; /* Optional: Rounded corners for images */
     margin-bottom: 15px; /* Space below the image */
