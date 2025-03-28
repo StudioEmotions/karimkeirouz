@@ -1,49 +1,3 @@
-// Function to load external HTML files
-/*function loadComponent(url, elementId) {
-    fetch(url)
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById(elementId).innerHTML = data;
-        })
-        .catch(error => console.error('Error loading component:', error));
-}
-
-// Load Navbar and Footer
-document.addEventListener('DOMContentLoaded', function () {
-    loadComponent('header.html', 'header-placeholder');
-    loadComponent('navbar.html', 'nav-placeholder');
-    loadComponent('footer.html', 'footer-placeholder');
-});
-
-// print.js
-// Attendre que le DOM soit chargé
-document.addEventListener('DOMContentLoaded', () => {
-  // Sélectionner le lien par sa classe
-  const printLink = document.querySelector('.print-link');
-  
-  // Ajouter un écouteur d'événement
-  printLink.addEventListener('click', (e) => {
-    e.preventDefault(); // Empêcher le comportement par défaut du lien
-    printPDF('CV KK 03-2025.pdf'); // Appeler la fonction d'impression
-  });
-});
-
-// Fonction pour imprimer le PDF
-function printPDF(pdfPath) {
-  const embed = document.createElement('embed');
-  embed.src = pdfPath;
-  embed.type = 'application/pdf';
-  embed.style.width = '0';
-  embed.style.height = '0';
-  document.body.appendChild(embed);
-
-  embed.onload = () => {
-    setTimeout(() => {
-      embed.contentWindow.print();
-    }, 500);
-  };
-}
-*/
 // Fonction pour charger les composants
 async function loadComponent(url, elementId) {
     try {
@@ -57,7 +11,6 @@ async function loadComponent(url, elementId) {
 
 // Fonction d'impression améliorée
 function printPDF(pdfPath) {
-    // Solution alternative plus fiable
     const newWindow = window.open(pdfPath, '_blank');
     
     if (newWindow) {
@@ -76,16 +29,58 @@ function printPDF(pdfPath) {
     }
 }
 
-// Au chargement du DOM
+// Fonction pour initialiser le modal
+function initModal() {
+    const certificatSection = document.querySelector("#certificat");
+    
+    if (certificatSection) {
+        // Créer les éléments du modal
+        const modal = document.createElement("div");
+        modal.classList.add("modal");
+        modal.style.display = "none"; // Le modal est caché par défaut
+
+        const modalContent = document.createElement("img");
+        modalContent.classList.add("modal-content");
+
+        const closeModal = document.createElement("span");
+        closeModal.classList.add("close");
+        closeModal.innerHTML = "&times;";
+
+        modal.appendChild(closeModal);
+        modal.appendChild(modalContent);
+        document.body.appendChild(modal);
+
+        // Ajouter les événements de clic pour les images de certificat
+        const certificatImages = certificatSection.querySelectorAll(".article-image");
+        certificatImages.forEach(image => {
+            image.addEventListener("click", function() {
+                modalContent.src = this.src;
+                modal.style.display = "flex"; // Afficher seulement au clic
+            });
+        });
+
+        // Fermer le modal
+        closeModal.addEventListener("click", function() {
+            modal.style.display = "none";
+        });
+
+        modal.addEventListener("click", function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    }
+}
+
+// Chargement des composants et initialisation
 document.addEventListener('DOMContentLoaded', async function() {
-    // Chargement des composants
     await Promise.all([
         loadComponent('header.html', 'header-placeholder'),
         loadComponent('navbar.html', 'nav-placeholder'),
         loadComponent('footer.html', 'footer-placeholder')
     ]);
 
-    // Gestion du lien d'impression
+    // Gérer le lien d'impression
     const printLink = document.querySelector('.print-link');
     if (printLink) {
         printLink.addEventListener('click', function(e) {
@@ -93,4 +88,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             printPDF('CV KK 03-2025.pdf');
         });
     }
+
+    // Initialiser le modal après le chargement complet
+    initModal();
 });
